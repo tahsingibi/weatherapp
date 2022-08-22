@@ -1,13 +1,64 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+* {
+  @apply duration-75;
+}
+.container {
+  @apply max-w-3xl w-full mx-auto py-8 px-4 text-zinc-500 antialiased;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.weatherApp-header {
+  @apply bg-zinc-50 border border-zinc-100 p-2 rounded-lg;
+}
+
+.weekWeather {
+  @apply flex flex-wrap sm:flex-nowrap sm:space-x-1 flex-row justify-between py-2;
+}
+
+.weekWeather-card {
+  @apply p-4 w-1/2 sm:w-auto  hover:text-zinc-500 flex flex-col items-center text-center sm:rounded first:border first:sm:border first:sm:border-zinc-200 first:w-full first:flex-row first:justify-center first:space-x-5 first:py-8 first:sm:w-auto first:sm:flex-col first:sm:py-0 first:sm:w-auto first:sm:space-x-0;
+}
+.cardTitle {
+  @apply w-full text-lg rounded-lg py-2 text-center mt-2 border border-zinc-100 shadow-inner;
+}
+.cardTitle span {
+  @apply font-bold;
+}
+input {
+  @apply capitalize rounded px-3 py-2 text-sm border border-zinc-200 focus:outline-none;
+}
+
+.maxmin {
+  @apply font-semibold space-x-1;
+}
+
+.min,
+.month {
+  @apply opacity-50 group-hover:opacity-100;
+}
+.icon {
+  @apply my-2;
+}
+.icon img {
+  @apply w-12 h-auto group-hover:scale-110;
+}
+
+.date {
+  @apply flex flex-col;
+}
+.day {
+  @apply font-bold text-2xl;
+}
+
+.weatherApp-footer {
+  @apply text-center text-sm;
+}
+
+.weatherApp-footer a {
+  @apply ml-1 font-semibold opacity-80 hover:opacity-100;
+}
+
+.loading {
+  @apply flex items-center my-2 justify-center text-lg rounded border border-zinc-100 w-full py-5 font-semibold;
 }
