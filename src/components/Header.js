@@ -9,7 +9,6 @@ function Header() {
     e.preventDefault()
     if (input !== city && input ) {
       setCity(input)
-      console.log(input)
     }
   };
 
