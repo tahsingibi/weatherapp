@@ -4,15 +4,7 @@ function Footer() {
   return (
     <footer className="weatherApp-footer">
       <p>
-        by
-        <a
-          href="https://sungur.dev"
-          title="@tahsingibi"
-          target="_blank"
-          rel="noreferrer"
-        >
-          tahsingibi
-        </a>
+        by <a href="https://sungur.dev" title="@tahsingibi" target="_blank" rel="noreferrer">tahsingibi</a>
       </p>
     </footer>
   );

@@ -4,12 +4,10 @@ import { useAll } from "./context/Context";
 function Header() {
   const { input, setInput, city, setCity, setWeather } = useAll();
 
-  const inputChange = e => {setInput(e.target.value)}
+  const inputChange = e => setInput(e.target.value)
   const inputSubmit = e => {
     e.preventDefault()
-    if (input !== city && input ) {
-      setCity(input)
-    }
+    if (input && input !== city)setCity(input)
   };
 
   useEffect(() => {
@@ -18,13 +16,13 @@ function Header() {
     fetch(apiurl)
       .then(r => r.json())
       .then(setWeather)
-      .catch(error => alert("veri alınamadı"));
+      .catch(error => alert("Veri Alınamadı"));
   }, [city, setWeather]);
 
   return (
       <header className="weatherApp-header">
         <form onSubmit={inputSubmit}>
-          <input autoFocus onChange={inputChange} value={input}  />
+          <input autoFocus onChange={inputChange} value={input} required/>
         </form>
       </header>
   )
