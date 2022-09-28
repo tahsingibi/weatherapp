@@ -1,7 +1,7 @@
-import Provider from "./components/context/Context";
-import Header from "./components/Header";
-import Weather from "./components/Weather";
-import Footer from "./components/Footer";
+import Provider from './context/Context';
+import Header from './components/Header';
+import Weather from './components/Weather';
+import Footer from './components/Footer';
 
 function App() {
   return (

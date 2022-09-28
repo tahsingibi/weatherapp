@@ -1,65 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-* {
-  @apply duration-75;
-}
-.container {
-  @apply max-w-3xl w-full mx-auto py-8 px-4 text-zinc-500 antialiased;
-}
+* {@apply duration-75;}
+.container {@apply max-w-3xl w-full mx-auto py-8 px-4 text-zinc-500 antialiased;}
 
-.weatherApp-header {
-  @apply bg-zinc-50 border border-zinc-100 p-2 rounded-lg;
-}
+.AppHeader{@apply w-full bg-indigo-50 p-3 rounded border border-indigo-100}
+.AppHeader input{@apply px-2 py-1 rounded capitalize focus:outline-none}
 
-.weekWeather {
-  @apply flex flex-wrap sm:flex-nowrap justify-between sm:space-x-1 sm:space-y-0 space-y-2 flex-row  py-2;
-}
+.AppFooter{@apply my-4 text-center italic text-sm bg-gray-50/70 rounded p-3}
+.AppFooter a{@apply font-semibold}
 
-.weekWeather-card {
-  @apply
-  p-4 text-center hover:text-zinc-500 flex flex-col justify-center items-center shadow-sm sm:shadow-none sm:rounded first:border  first:border-zinc-200 ;
-}
-.cardTitle {
-  @apply w-full text-lg rounded-lg py-2 text-center mt-2 bg-zinc-50/50 shadow-inner;
-}
-.cardTitle span {
-  @apply font-bold;
-}
-input {
-  @apply capitalize rounded px-3 py-2 text-sm border border-zinc-200 focus:outline-none;
-}
+.CityTitle{@apply bg-gray-50 text-center my-4 p-3 rounded shadow-inner}
+.CityTitle span{@apply font-bold}
 
-.maxmin {
-  @apply font-semibold space-x-1;
-}
-
-.min,
-.month {
-  @apply opacity-50 group-hover:opacity-100;
-}
-.icon {
-  @apply my-2;
-}
-.icon img {
-  @apply w-12 h-auto group-hover:scale-110;
-}
-
-.date {
-  @apply flex flex-col;
-}
-.day {
-  @apply font-bold text-2xl;
-}
-
-.weatherApp-footer {
-  @apply text-center text-sm mt-4;
-}
-
-.weatherApp-footer a {
-  @apply ml-1 font-semibold opacity-80 hover:opacity-100;
-}
-
-.loading {
-  @apply flex items-center my-2 justify-center text-lg rounded border border-zinc-100 w-full py-5 font-semibold;
-}
+.Cards{@apply grid grid-cols-2 sm:grid-cols-8 gap-x-3}
+.Cards-item{@apply text-center space-y-4 flex flex-col items-center justify-between py-4 px-2 first:border first:border-black/5}
+.Cards-item-title{@apply font-bold}
+.Cards-item-icon img{@apply w-20 h-10 group-hover:scale-105}
+.Cards-item-minmax{@apply font-bold space-x-1}
+.Cards-item-minmax > .min{@apply opacity-50}

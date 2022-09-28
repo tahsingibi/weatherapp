@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useAll } from "./context/Context";
+import { useAll } from "../context/Context";
 
 function Header() {
   const { input, setInput, city, setCity, setWeather } = useAll();
@@ -12,19 +12,20 @@ function Header() {
 
   useEffect(() => {
     const key = process.env.REACT_APP_WEATHER_API;
-    const apiurl = `https://api.weatherbit.io/v2.0/forecast/daily?city=${city}&lang=tr&days=8&key=${key}`;
+    const apiurl = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}/next7days?unitGroup=metric&elements=datetime%2CdatetimeEpoch%2Cname%2Caddress%2Ctempmax%2Ctempmin%2Cdescription%2Cicon&include=days&key=${key}&contentType=json
+    `;
     fetch(apiurl)
       .then(r => r.json())
       .then(setWeather)
-      .catch(error => alert("Veri Alınamadı"));
+      .catch(e => console.log(`Veri çekilirken hata oluştu: ${e}`));
   }, [city, setWeather]);
 
   return (
-      <header className="weatherApp-header">
-        <form onSubmit={inputSubmit}>
-          <input autoFocus onChange={inputChange} value={input} required/>
-        </form>
-      </header>
-  )
+    <header className="AppHeader">
+      <form onSubmit={inputSubmit}>
+        <input autoFocus onChange={inputChange} value={input} required />
+      </form>
+    </header>
+  );
 }
 export default Header;
