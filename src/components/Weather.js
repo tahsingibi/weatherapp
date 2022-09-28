@@ -6,7 +6,7 @@ function Weather() {
 
   return (
     <>
-      {!weather && <div className="loading">Yükleniyor</div>}
+      {!weather && <div className="loading">Yükleniyor...</div>}
       <div className="CityTitle">
         <span>{weather?.resolvedAddress}</span> haftalık hava durumu
       </div>

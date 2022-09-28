@@ -9,6 +9,7 @@
 
 .AppFooter{@apply my-4 text-center italic text-sm bg-gray-50/70 rounded p-3}
 .AppFooter a{@apply font-semibold}
+.loading{@apply text-center w-full p-20 bg-gray-50 animate-pulse border border-gray-200 my-4 rounded}
 
 .CityTitle{@apply bg-gray-50 text-center my-4 p-3 rounded shadow-inner}
 .CityTitle span{@apply font-bold}
